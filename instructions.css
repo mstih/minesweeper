@@ -15,8 +15,73 @@ body{
     filter:blur(3.5px);
 }
 .container{
-    
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 470px;
+    margin-left: -250px;
+    margin-top: -235px;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
 }
+
+#title{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Barlow';
+    font-weight: 700;
+    font-size: 2em;
+}
+
+#title2{
+    font-family: 'Barlow';
+    text-decoration: underline;
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+
+p{
+    font-family: 'Barlow';
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    font-size: 1em;
+}
+
+#game-btn,
+#menu-btn{
+    margin-top: 25px;
+    text-align: center;
+    height: 35px;
+    background-color: white;
+    font-weight: 500;
+    font-family: 'Barlow';
+    border: none;
+    font-size: 1em;
+    width: 175px;
+}
+#game-btn{
+    width: 125px;
+}
+
+#menu-btn:hover,
+#menu-btn:focus{
+    box-shadow: inset 175px 0 0 0 rgba(29, 27, 29, 0.8);
+    color: white;
+    transition: 0.85s;
+}
+
+#game-btn:hover,
+#game-btn:focus{
+    box-shadow: inset 125px 0 0 0 rgba(29, 27, 29, 0.8);
+    color: white;
+    transition: 0.7s;
+}
+
 
 footer{
     background-color: rgba(29, 27, 29, 0.8);
