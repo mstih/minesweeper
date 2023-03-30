@@ -1,7 +1,6 @@
 body{
     height: 100%;
     margin: 0;
-    /*background-color: rgba(157, 147, 158, 0.6);*/
 }
 .background-img{
     position: absolute;
@@ -72,6 +71,7 @@ p{
 #menu-btn:focus{
     box-shadow: inset 175px 0 0 0 rgba(29, 27, 29, 0.8);
     color: white;
+    cursor: pointer;
     transition: 0.85s;
 }
 
@@ -79,6 +79,7 @@ p{
 #game-btn:focus{
     box-shadow: inset 125px 0 0 0 rgba(29, 27, 29, 0.8);
     color: white;
+    cursor: pointer;
     transition: 0.7s;
 }
 
