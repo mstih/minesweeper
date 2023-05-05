@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,94 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow" rel="stylesheet">
     <link rel="icon" href="images/landmine-icon.png">
 </head>
+
 <body>
     <div class="background-img"></div>
     <div class="container">
         <h1 id="title">Minesweeper</h1>
-        <p>Press any square to begin game!</p>
+        <p id="message">Press on any square to begin game!</p>
         <div class="above-table">
-            <h2 id="flags-left">005</h2>
+            <h2 id="flags-left">000</h2>
             <h2 id="smiley"></h2>
-            <h2 id="time">1:30</h2></div>
-        
-        <div class="board">
-            <table>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+            <h2 id="timer">000</h2>
+        </div>
+        <div id="boardcontainer">
+            <div id="board">
+            </div>
         </div>
         <div class="btns">
-            <button id="reset-btn">Reset Game</button>
+            <button id="reset-btn" onclick="window.location.href=window.location.href">Reset Game</button>
             <a href="menu.html"><button id="menu-btn">Menu</button></a>
             <a href="instructions.html"><button id="instruction-btn">How to Play</button></a>
         </div>
@@ -104,11 +34,13 @@
     </div>
     <footer>
         <div class="footer-content">
-        2023 - Miha Stih - 
-        <a href="mailto:mstih@proton.me">Contact</a>
-        -
-        <a href="https://github.com/mstih">GitHub</a>
+            2023 - Miha Stih -
+            <a href="mailto:mstih@proton.me">Contact</a>
+            -
+            <a href="https://github.com/mstih">GitHub</a>
         </div>
-    </footer>    
+    </footer>
+    <script src="app.js"></script>
 </body>
+
 </html>
