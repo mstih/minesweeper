@@ -62,14 +62,13 @@ function initTable() {
             elm.classList.add("cell");
             addClickListener(elm, i, j);
             addRightClickListener(elm, i, j);
-            cells[count] = elm.id.toString();
+            cells[count] = elm;
             count++;
             row.appendChild(elm);
             //MISSING: Add Event listener
         }
         table.appendChild(row);
     }
-    console.log(cells);
     return table
 }
 
@@ -102,7 +101,6 @@ function setNumberValues() {
                 if (count > 0) {
                     cell.style.color = textColors[count];
                     cell.setAttribute("value", count);
-                    console.log(cell.getAttribute("value"));
                     //set color to be according to textColors array
                 } else {
                     cell.setAttribute("value", 0);
@@ -138,17 +136,19 @@ function checkCell(row, col) {
 function addClickListener(elm, i, j) {
     elm.addEventListener('click', function () {
         //Starts timer at the first click and deletes message to click button to start
-        if (gameRunning == false) {
+        if (gameParameters.gameOver) {return}
+        else if(!gameRunning && !gameParameters.gameOver) {
             startTime();
             message.innerHTML = "";
         }
-
         //GAME OVER
         if (elm.getAttribute("value") == "bomb") {
             stopTime();
             gameParameters.gameOver = true;
+            gameRunning = false;
             console.log("BOMB CLICKED!");
             showMines();
+            disableEvents();
             message.innerHTML = "Noooo, that was a bomb!";
             message.style.color = "red";
             message.style.fontSize = "1.5em";
@@ -183,9 +183,11 @@ function addClickListener(elm, i, j) {
 
 //FUNCTION WHICH RUNS WHEN CELL IS RIGHTCLICKED
 function addRightClickListener(elm, i, j) {
-    elm.addEventListener('contextmenu', (event) => {
+    elm.addEventListener('contextmenu', function (event) {
         //Prevents a rightclick menu from popping up
         event.preventDefault();
+        if (!gameRunning){return};
+        if(gameParameters.gameOver){return};
         //Checks for number of flags left and if there is already flag on the cell
         //and also if the flag is already open
         if (elm.innerHTML == '' && flags > 0 && elm.className == "cell") {
@@ -261,6 +263,7 @@ function checkWinner() {
     //The user has won a game
     else {
         gameRunning = false;
+        gameParameters.gameOver = true;
         stopTime();
         console.log("WINNER");
         message.style.color = "darkgreen";
