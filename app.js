@@ -135,9 +135,9 @@ function checkCell(row, col) {
 //ACTION LISTENER FOR ALL CELLS
 function addClickListener(elm, i, j) {
     elm.addEventListener('click', function () {
-        //Starts timer at the first click and deletes message to click button to start
         if (gameParameters.gameOver) {return}
-        else if(!gameRunning && !gameParameters.gameOver) {
+        //Starts timer at the first click and deletes message to click button to start
+        if(!gameRunning && !gameParameters.gameOver) {
             startTime();
             message.innerHTML = "";
         }
@@ -148,13 +148,13 @@ function addClickListener(elm, i, j) {
             gameRunning = false;
             console.log("BOMB CLICKED!");
             showMines();
-            disableEvents();
+            //disableEvents(); -- V ODDANEM NI ODSTRANJENO
             message.innerHTML = "Noooo, that was a bomb!";
             message.style.color = "red";
             message.style.fontSize = "1.5em";
             message.style.fontWeight = "600";
         }
-
+        
         //EVERYTHING ELSE
         else if (gameParameters.gameOver == false && elm.getAttribute("value") != "bomb") {
             //Check if flag is on cell to remove it and give flag back
